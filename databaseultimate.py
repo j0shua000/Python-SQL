@@ -52,10 +52,13 @@ for fila in resultado:
 for fila3 in resultado2:
     print(fila3)
     
-resultado3 = clase_bd.consultar_datos("SELECT actor.first_name,actor.last_name FROM actor JOIN film_actor ON actor.actor_id = film_actor.actor_id JOIN film ON film_actor.film_id = film.film_id WHERE film.title = 'Dumbo Lust'")
+resultado3 = clase_bd.consultar_datos("SELECT actor.first_name,actor.last_name FROM actor JOIN" + 
+" film_actor ON actor.actor_id = film_actor.actor_id JOIN film ON film_actor.film_id = film.film_id WHERE film.title = 'Dumbo Lust'")
 
-for fila2 in resultado3:
-    print(fila2)
-    
+resultado4 = clase_bd.consultar_datos("SELECT address_id, district, city_id FROM address ORDER BY city_id ASC")
+
+for fila4 in resultado4:
+    print(fila4)
+
 # Cerrar la conexión
 clase_bd.cerrar_conexion()
